@@ -59,7 +59,7 @@ const CompoundGameResult = forwardRef(
                     src={promoCode !== null ? Pass : Fail}
                     alt="image"
                     className={`${
-                      promoCode !== null ? "w-[256px]" : "w-[126px]"
+                      promoCode !== null ? "w-[200px]" : "w-[126px]"
                     }`}
                   />
 
@@ -74,10 +74,12 @@ const CompoundGameResult = forwardRef(
                         Chúc mừng ! Bạn bạn đã nhận được mã khuyến mãi
                       </p>
                       <div
-                        className="text-[#106C3B] text-sm font-semibold cursor-pointer"
+                        className="cursor-pointer w-fit mx-auto"
                         onClick={() => navigator.clipboard.writeText(promoCode)}
                       >
-                        {promoCode}
+                        <p className="text-[#106C3B] border border-[#106C3B] text-sm font-semibold text-center bg-green-200 mt-2 px-2 py-1 rounded-lg">
+                          {promoCode}
+                        </p>
                       </div>
                     </div>
                   )}

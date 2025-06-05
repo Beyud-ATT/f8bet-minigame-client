@@ -29,7 +29,7 @@ const RulesGame = ({ isOpen, onClose }) => {
           CHI TIẾT SỰ KIỆN THAM GIA MINIGAME CÙNG F8BET
         </h2>
 
-        <div className="space-y-3 text-black leading-relaxed">
+        <div className="space-y-3 text-black leading-relaxed text-justify">
           <div>
             <strong>📌 Thể lệ tham gia:</strong>
             <ul>
@@ -79,7 +79,7 @@ const RulesGame = ({ isOpen, onClose }) => {
           </div>
         </div>
 
-        <div className="flex justify-center mt-6 mb-10">
+        <div className="flex justify-center mt-6 mb-10 text-justify">
           <button
             onClick={onClose}
             className="w-[250px] h-[50px] shadow-md transform scale-100 hover:scale-105 transition-all duration-300 cursor-pointer"
