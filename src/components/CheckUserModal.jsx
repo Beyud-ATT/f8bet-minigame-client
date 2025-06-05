@@ -4,6 +4,7 @@ import BankIcon from "./icons/BankIcon";
 import SiginBG from "../assets/images/signin-bg.webp";
 import SiginButton from "../assets/images/signin-btn.webp";
 import { UserIcon } from "../utils/svg";
+import { enqueueSnackbar } from "notistack";
 
 const CheckUserModal = ({ isOpen, onClose, onSuccess }) => {
   const [formData, setFormData] = useState({
@@ -11,16 +12,16 @@ const CheckUserModal = ({ isOpen, onClose, onSuccess }) => {
     bankLastDigits: "",
   });
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
 
   const handleSubmit = async () => {
     if (!formData.username || !formData.bankLastDigits) {
-      setError("Vui lòng điền đầy đủ thông tin!");
+      enqueueSnackbar("Vui lòng điền đầy đủ thông tin!", {
+        variant: "error",
+      });
       return;
     }
 
     setLoading(true);
-    setError("");
 
     try {
       // First verify user credentials
@@ -32,8 +33,11 @@ const CheckUserModal = ({ isOpen, onClose, onSuccess }) => {
       console.log(userVerified);
 
       if (!userVerified.valid) {
-        setError(
-          userVerified.text_mess ?? "Thông tin tài khoản không chính xác!"
+        enqueueSnackbar(
+          userVerified.text_mess ?? "Thông tin tài khoản không chính xác!",
+          {
+            variant: "error",
+          }
         );
         return;
       }
@@ -45,7 +49,10 @@ const CheckUserModal = ({ isOpen, onClose, onSuccess }) => {
 
       onSuccess(formData);
     } catch (err) {
-      setError(err.message || "Có lỗi xảy ra. Vui lòng thử lại.");
+      enqueueSnackbar(err.message || "Có lỗi xảy ra. Vui lòng thử lại.", {
+        variant: "error",
+      });
+      // setError(err.message || "Có lỗi xảy ra. Vui lòng thử lại.");
     } finally {
       setLoading(false);
     }
@@ -54,7 +61,6 @@ const CheckUserModal = ({ isOpen, onClose, onSuccess }) => {
   // Reset form when modal closes
   const handleClose = () => {
     setFormData({ username: "", bankLastDigits: "" });
-    setError("");
     onClose();
   };
 
@@ -63,7 +69,7 @@ const CheckUserModal = ({ isOpen, onClose, onSuccess }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50">
       <div
-        className="relative w-full max-w-[394px] h-[308px] p-6 flex flex-col items-center justify-end "
+        className="relative w-full max-w-[394px] min-h-[308px] p-6 flex flex-col items-center justify-end"
         style={{
           backgroundImage: `url(${SiginBG})`,
           backgroundSize: "cover",
@@ -143,8 +149,6 @@ const CheckUserModal = ({ isOpen, onClose, onSuccess }) => {
               }
             />
           </div>
-
-          {error && <p className="text-red-500 text-sm text-center">{error}</p>}
         </div>
 
         <div className="mt-4 flex justify-center">
