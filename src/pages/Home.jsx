@@ -20,28 +20,28 @@ const Home = ({
       className="md:w-[500px] min-h-screen mx-auto flex flex-col relative"
       style={{ background: `url(${bg}) center/cover no-repeat` }}
     >
-      <div className="flex flex-col items-center h-[65dvh]">
+      <div className="flex flex-col items-center">
         <a
-          className="max-w-[300px] mt-20 flex"
-          href="https://shbet000.vip/"
-          alt="Truy cập trang chủ SHBET"
+          className="max-w-[300px] mt-10 flex"
+          href="https://f8beta2.com/"
+          alt="Truy cập trang chủ F8BET"
           rel="dofollow"
         >
           <img
             src={logo}
-            alt="SHBET nhà cái uy tín"
+            alt="F8BET nhà cái uy tín"
             className="w-full h-auto"
           />
         </a>
 
         <img
           src={minigame}
-          alt="SHBET Minigame - Đuổi Hình Đoán Chữ, Trò Chơi Giải Đố Hấp Dẫn"
+          alt="F8BET Minigame - Đuổi Hình Đoán Chữ, Trò Chơi Giải Đố Hấp Dẫn"
           className="w-4/5 mt-6"
         />
       </div>
 
-      <div className="flex flex-col gap-6 items-center justify-start h-[35dvh] pt-5">
+      <div className="flex flex-col gap-6 items-center mt-5">
         {userData === null && (
           <button
             className="w-[282px] h-[53px] mt-1 text-lg scale-95 hover:scale-100 transform transition-all duration-300 cursor-pointer"
