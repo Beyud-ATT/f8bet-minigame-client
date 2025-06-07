@@ -17,7 +17,7 @@ const Home = ({
 }) => {
   return (
     <div
-      className="md:w-[500px] min-h-screen mx-auto flex flex-col relative overflow-auto"
+      className="md:w-[500px] w-full h-full mx-auto flex flex-col relative overflow-auto"
       style={{ background: `url(${bg}) center/cover no-repeat` }}
     >
       <div className="flex flex-col items-center">
