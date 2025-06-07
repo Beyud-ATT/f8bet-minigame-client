@@ -24,7 +24,7 @@ const Home = ({
         minHeight: "100dvh", // Dynamic viewport height for better mobile support
       }}
     >
-      <div className="flex flex-col items-center pb-8">
+      <div className="flex flex-col items-center pb-4">
         <a
           className="max-w-[300px] mt-8 flex"
           href="https://f8beta2.com/"
@@ -45,7 +45,7 @@ const Home = ({
         />
       </div>
 
-      <div className="flex flex-col gap-4 items-center mt-2 pb-8">
+      <div className="flex flex-col gap-4 items-center pb-8">
         {userData === null && (
           <button
             className="w-[282px] h-[53px] mt-1 text-lg scale-95 hover:scale-100 transform transition-all duration-300 cursor-pointer"
