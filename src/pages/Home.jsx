@@ -22,7 +22,7 @@ const Home = ({
     >
       <div className="flex flex-col items-center">
         <a
-          className="max-w-[300px] mt-10 flex"
+          className="max-w-[300px] mt-8 flex"
           href="https://f8beta2.com/"
           alt="Truy cập trang chủ F8BET"
           rel="dofollow"
@@ -41,7 +41,7 @@ const Home = ({
         />
       </div>
 
-      <div className="flex flex-col gap-6 items-center mt-5">
+      <div className="flex flex-col gap-4 items-center mt-5">
         {userData === null && (
           <button
             className="w-[282px] h-[53px] mt-1 text-lg scale-95 hover:scale-100 transform transition-all duration-300 cursor-pointer"
