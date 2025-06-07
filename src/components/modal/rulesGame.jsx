@@ -25,11 +25,11 @@ const RulesGame = ({ isOpen, onClose }) => {
           <CloseModalButton />
         </div>
 
-        <h2 className="w-[80%] mx-auto text-lg font-bold text-center text-[#0667FF] mb-3 mt-10">
+        <h2 className="w-[80%] mx-auto text-lg font-bold text-center text-[#0667FF] mb-3 mt-10 md:text-[20px] text-[16px]">
           CHI TIẾT SỰ KIỆN THAM GIA MINIGAME CÙNG F8BET
         </h2>
 
-        <div className="space-y-3 text-black leading-relaxed text-justify">
+        <div className="space-y-3 text-black leading-relaxed text-justify md:text-base text-[12px]">
           <div>
             <strong>📌 Thể lệ tham gia:</strong>
             <ul>
@@ -79,10 +79,10 @@ const RulesGame = ({ isOpen, onClose }) => {
           </div>
         </div>
 
-        <div className="flex justify-center mt-6 mb-10 text-justify">
+        <div className="flex justify-center mt-6 md:mb-10 mb-5 text-justify">
           <button
             onClick={onClose}
-            className="w-[250px] h-[50px] shadow-md transform scale-100 hover:scale-105 transition-all duration-300 cursor-pointer"
+            className="w-[200px] h-[40px] md:w-[250px] md:h-[50px] shadow-md transform scale-100 hover:scale-105 transition-all duration-300 cursor-pointer"
             style={{
               borderRadius: "23.983px",
               border: "0.727px solid #FFF",
@@ -90,7 +90,9 @@ const RulesGame = ({ isOpen, onClose }) => {
               boxShadow: "0px 2.331px 2.331px 0px #08F",
             }}
           >
-            <span className="text-white font-bold">ĐÃ HIỂU</span>
+            <span className="text-white font-bold md:text-[16px] text-[14px]">
+              ĐÃ HIỂU
+            </span>
           </button>
         </div>
       </div>
