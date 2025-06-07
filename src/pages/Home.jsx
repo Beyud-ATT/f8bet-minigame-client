@@ -17,10 +17,14 @@ const Home = ({
 }) => {
   return (
     <div
-      className="md:w-[500px] w-full h-full mx-auto flex flex-col relative overflow-auto"
-      style={{ background: `url(${bg}) center/cover no-repeat` }}
+      className="md:w-[500px] min-h-screen mx-auto flex flex-col relative"
+      style={{
+        background: `url(${bg}) center/cover no-repeat`,
+        overflowY: "auto",
+        overflowX: "hidden",
+      }}
     >
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center pb-8">
         <a
           className="max-w-[300px] mt-8 flex"
           href="https://f8beta2.com/"
@@ -41,7 +45,7 @@ const Home = ({
         />
       </div>
 
-      <div className="flex flex-col gap-4 items-center mt-5">
+      <div className="flex flex-col gap-4 items-center mt-5 pb-8">
         {userData === null && (
           <button
             className="w-[282px] h-[53px] mt-1 text-lg scale-95 hover:scale-100 transform transition-all duration-300 cursor-pointer"
