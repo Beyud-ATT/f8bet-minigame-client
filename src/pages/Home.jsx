@@ -17,11 +17,11 @@ const Home = ({
 }) => {
   return (
     <div
-      className="md:w-[500px] min-h-screen mx-auto flex flex-col relative"
+      className="md:w-[500px] mx-auto flex flex-col relative overflow-y-auto overflow-x-hidden"
       style={{
         background: `url(${bg}) center/cover no-repeat`,
-        overflowY: "auto",
-        overflowX: "hidden",
+        WebkitOverflowScrolling: "touch",
+        minHeight: "100dvh", // Dynamic viewport height for better mobile support
       }}
     >
       <div className="flex flex-col items-center pb-8">
